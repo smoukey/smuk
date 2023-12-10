@@ -8,7 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="icon" href="assets/vbuck.png">
-    <title> </title>
+    <title>Your Title Here</title>
+    <style>
+        body {
+            overflow: hidden; /* Prevent scrolling before clicking */
+        }
+    </style>
 </head>
 <body>
     <video class="cover-behind-elements fullscreen" id="video" loop>
@@ -17,18 +22,7 @@
     </video>
     
     <div id='hero' class="hero hidden">
-        <div class="hero-content">
-            <h1 href="https://discord.com/users/691517398523576331" class="title"></h1>
-            <br>
-            <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="" draggable="false" id="cat?" />
-            <h1 class="titl"></h1>
-            <div id>
-                <img src="assets/discord.png" style="max-width: 55px;" alt="pfp" classdraggable="false" id="discord"/>
-                <img src="assets/tele.png" style="max-width: 55px;" alt="pfp" classdraggable="false" id="tele"/>
-                <img src="assets/roblox.png" style="max-width: 55px;" alt="pfp" classdraggable="false" id="roblox"/>
-            </div>
-            <br>
-        </div>
+        <!-- Your existing hero content here -->
     </div>
 
     <div id="cover" class="overlay fullscreen">
@@ -39,33 +33,7 @@
 
     <audio id="audio" src="#" loop></audio>
     <script>
-
-        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-            alert("click");
-        }
-
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.onkeydown = function(e) {
-            if(event.keyCode == 123) {
-                return false;
-            }
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-                return false;
-            }
-            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-                return false;
-            }
-            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-                return false;
-            }
-        }
-
-        document.onselectstart = function () { return false; }
-
-        function playVideo() {
-            var video = document.getElementById("video");
-            video.play();
-        }
+        // Your existing JavaScript code here
 
         function showHero() {
             // remove the div
@@ -73,18 +41,7 @@
             document.getElementById("cover").classList.add("fadeout");
             // show the hero
             document.getElementById("hero").style.display = "block";
-        }
-
-        document.getElementById("discord").onclick = function () {
-            window.open("https://discord.com/users/691517398523576331", "_blank");
-        }
-
-        document.getElementById("tele").onclick = function () {
-            window.open("https://t.me/smuki1", "_blank");
-        }
-
-        document.getElementById("roblox").onclick = function () {
-            window.open("https://www.roblox.com/users/587159802/profile", "_blank");
+            
         }
     </script>
 </body>
