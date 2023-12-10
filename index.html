@@ -21,6 +21,7 @@
       text-align: center;
       color: white;
       z-index: 1;
+      display: none;
     }
     #bgVideo {
       width: 100%;
@@ -31,8 +32,8 @@
   </style>
 </head>
 <body>
-  <div id="cover" class="overlay fullscreen">
-    <label onclick="playVideo();">
+  <div id="cover" class="overlay fullscreen" onclick="playVideo();">
+    <label>
       <b class="rainbow">Click me</b>
     </label>
   </div>
@@ -42,8 +43,8 @@
     Your browser does not support the video tag.
   </video>
 
-  <div id="hero" style="display: none;">
-    <img src="assets/banner.png" alt="pfp" class="" draggable="false" id="banner" />
+  <div id="hero">
+    <img src="assets/banner.png" alt="pfp" draggable="false" id="banner" />
     <!-- Your other content goes here -->
   </div>
 
@@ -54,7 +55,6 @@
 
       // Play the video
       var video = document.getElementById("bgVideo");
-      video.style.display = "block";
       video.play();
 
       // Show the hero content when the video is loaded
