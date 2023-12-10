@@ -2,95 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="assets/premium.gif">
   <title>smuki</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
-    #hero {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      z-index: 1;
-      display: none;
-    }
-    #bgVideo {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-    }
-    .rainbow {
-      color: #fff;
-      background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-      -webkit-background-clip: text;
-      background-clip: text;
-      display: inline-block;
-    }
-  </style>
 </head>
 <body>
-  <video id="bgVideo" autoplay loop class="fullscreen-background">
+  <div id="cover" class="overlay fullscreen">
+    <label onclick="playVideo();">
+      <b class="rainbow">Click me</b>
+    </label>
+  </div>
+
+  <video id="bgVideo" autoplay loop class="fullscreen-background" style="display: none;">
     <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <div id="hero" class="overlay">
-    <img src="assets/smuki.gif" alt="pfp" draggable="false" id="banner" />
-    <a href="https://discord.com/users/691517398523576331/" draggable="false">
-      <i class="fa-brands fa-discord social-item fa-2xl" style="color:#5077c4;"></i>
-    </a>
-    <!-- Your other content goes here -->
+  <div id='hero' class="hero hidden">
+    <div class="hero-content">
+      <img src="assets/bhop.gif" alt="pfp" class="" draggable="false" id="banner" />
+      <h1 href="https://discord.com/users/691517398523576331/" class="title"></h1>
+      <div class="badge">
+        <img src="assets/XO.gif" style="width: 40px; height: 40px;" alt="$">
+        <span class="badge-tooltiptext">XO</span>
+      </div>
+      <br>
+      <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="no-visual-search" draggable="false" id="" />
+      <h1 class="titl"></h1>
+      <div id="socials">
+        <a href="https://discord.com/users/691517398523576331/" draggable="false">
+          <i class="fa-brands fa-discord social-item fa-2xl" style="color:#5077c4;" id="tele"></i>
+        </a>
+        <a href="https://t.me/uniquify/" draggable="false">
+          <i class="fa-brands fa-telegram social-item fa-2xl" style="color:#5077c4;" id="tele"></i>
+        </a>
+      </div>
+      <br>
+    </div>
   </div>
 
   <script>
-    setTimeout(function() {
-      const hero = document.getElementById('hero');
-      hero.style.display = 'flex';
-    }, 750);
+    function playVideo() {
+      // Hide the cover
+      document.getElementById("cover").style.display = "none";
 
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-      if (event.keyCode == 123) {
-        return false;
-      }
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-        return false;
-      }
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-        return false;
-      }
-      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-        return false;
-      }
-    }
-    document.onselectstart = function() {
-      return false;
-    }
-    document.getElementById("banner").onclick = function() {
-      window.location.href = "https://discord.com/users/691517398523576331";
+      // Play the video
+      var video = document.getElementById("bgVideo");
+      video.style.display = "block";
+      video.play();
+
+      // Show the hero content when the video is loaded
+      video.addEventListener('loadeddata', function() {
+        document.getElementById("hero").style.display = "flex";
+      });
     }
   </script>
 
