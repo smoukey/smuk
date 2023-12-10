@@ -39,7 +39,7 @@
         </div>
     </div>
     <div id="cover" class="overlay fullscreen">
-        <label onclick="showHero();">
+        <label onclick="showHero();playVideo();">
             <b class="rainbow">click</b>
         </label>
     </div>
@@ -77,6 +77,10 @@
             document.getElementById("cover").style.display = "none";
             document.getElementById("cover").classList.add("fadeout");
             document.getElementById("hero").style.display = "block";
+        }
+        function playVideo() {
+            var video = document.getElementById("video");
+            video.play();
         }
 
         document.getElementById("banner").onclick = function () {
