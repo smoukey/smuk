@@ -1,105 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/premium.gif">
-    <title></title>
-    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="js/snowstorm.js"></script> -->
-    <meta content="bhop" property="og:title" />
-    <script src="https://kit.fontawesome.com/05c2770731.js" crossorigin="anonymous"></script>
-    <meta content="✝️" property="og:description" />
-    <meta content="https://vawnair.github.io/bio/assets/XO.gif" property="og:image" />
-    <meta content="#000000" data-react-helmet="true" name="theme-color" />
-    <meta name="description" content="✝️">
-  </head>
-  <body>
-  <video autoplay loop id="bgVideo cover-behind-elements">
-    <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4"> Your browser does not support the video tag.
-</video>
-    <div class="hero overlay">
-      <p>Loading</p>
-    </div>
-    <div id='hero' class="hero hidden">
-      <div class="hero-content">
-        <img src="assets/bhop.gif" alt="pfp" class="" draggable="false" id="banner" />
-        <h1 href="https://discord.com/users/691517398523576331/" class="title"></h1>
-        <div class="badge">
-          <img src="assets/creditcard.gif" style="width: 40px; height: 40px;" alt="$">
-          <span class="badge-tooltiptext">cardul de credit</span>
-        </div>
-        <br>
-        <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="no-visual-search" draggable="false" id="" />
-        <h1 class="titl"></h1>
-        <div id="socials">
-          <a href="https://discord.com/users/691517398523576331/" draggable="false">
-            <i class="fa-brands fa-discord social-item fa-2xl" , style="color:#5077c4;" , id="tele"></i>
-          </a>
-          <a href="https://t.me/uniquify/" draggable="false">
-            <i class="fa-brands fa-telegram social-item fa-2xl" , style="color:#5077c4;" , id="tele"></i>
-          </a>
-        </div>
-        <br>
-      </div>
-              <div id="cover" class="overlay fullscreen">
-            <label onclick="showHero();ap();vp()">
-                <b class="rainbow">click</b>
-            </label>
-        </div>  
-    </div>
-    <script src="script.js"></script>
-    <script src="js/bats.js"></script>
-    <script src="js/bats.js"></script>
-    <script src="js/bats.js"></script>
-    <script>
-            document.onselectstart = function () { return false; }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/premium.gif">
+  <title></title>
+  <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/05c2770731.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="cover" class="overlay fullscreen">
+    <label onclick="playVideo();">
+      <b class="rainbow">Click me</b>
+    </label>
+  </div>
 
-            function showHero() {
-                // remove the div
-                document.getElementById("cover").style.display = "none";
-                document.getElementById("cover").classList.add("fadeout");
-                // show the hero
-                document.getElementById("hero").style.display = "block";
-            }
-      
-      setTimeout(function() {
-        const overlay = document.querySelector('.overlay');
-        overlay.style.display = 'none';
-        const hero = document.getElementById('hero');
-        hero.classList.remove('hidden');
-      }, 750);
-      document.addEventListener('contextmenu', event => event.preventDefault());
-      document.onkeydown = function(e) {
-        if (event.keyCode == 123) {
-          return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-          return false;
-        }
-        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-          return false;
-        }
-        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-          return false;
-        }
-      }
-      document.onselectstart = function() {
+  <video id="bgVideo" autoplay loop class="fullscreen-background">
+    <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero overlay">
+    <p>Loading</p>
+  </div>
+
+  <div id='hero' class="hero hidden">
+    <div class="hero-content">
+      <img src="assets/bhop.gif" alt="pfp" class="" draggable="false" id="banner" />
+      <h1 href="https://discord.com/users/691517398523576331/" class="title"></h1>
+      <div class="badge">
+        <img src="assets/creditcard.gif" style="width: 40px; height: 40px;" alt="$">
+        <span class="badge-tooltiptext">cardul de credit</span>
+      </div>
+      <br>
+      <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="no-visual-search" draggable="false" id="" />
+      <h1 class="titl"></h1>
+      <div id="socials">
+        <a href="https://discord.com/users/691517398523576331/" draggable="false">
+          <i class="fa-brands fa-discord social-item fa-2xl" , style="color:#5077c4;" , id="tele"></i>
+        </a>
+        <a href="https://t.me/uniquify/" draggable="false">
+          <i class="fa-brands fa-telegram social-item fa-2xl" , style="color:#5077c4;" , id="tele"></i>
+        </a>
+      </div>
+      <br>
+    </div>
+    <div id="cover" class="overlay fullscreen">
+      <label onclick="showHero();playVideo();">
+        <b class="rainbow">Click me</b>
+      </label>
+    </div>  
+  </div>
+
+  <script>
+    function playVideo() {
+      // Hide the cover
+      document.getElementById("cover").style.display = "none";
+
+      // Play the video
+      var video = document.getElementById("bgVideo");
+      video.play();
+    }
+
+    function showHero() {
+      // remove the div
+      document.getElementById("cover").style.display = "none";
+      document.getElementById("cover").classList.add("fadeout");
+      // show the hero
+      document.getElementById("hero").style.display = "block";
+    }
+
+    // Additional scripts and modifications can be added here
+
+    // Your existing scripts
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function(e) {
+      if (event.keyCode == 123) {
         return false;
       }
-      document.getElementById("banner").onclick = function() {
-        window.location.href = "https://discord.com/users/691517398523576331";
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
       }
-      document.getElementById("discord").onclick = function() {
-        window.location.href = "https://discord.com/users/691517398523576331";
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
       }
-      document.getElementById("tele").onclick = function() {
-        window.location.href = "https://t.me/uniquify";
+      if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
       }
-    </script>
-  </body>
+    }
+    document.onselectstart = function() {
+      return false;
+    }
+    document.getElementById("banner").onclick = function() {
+      window.location.href = "https://discord.com/users/691517398523576331";
+    }
+    document.getElementById("discord").onclick = function() {
+      window.location.href = "https://discord.com/users/691517398523576331";
+    }
+    document.getElementById("tele").onclick = function() {
+      window.location.href = "https://t.me/uniquify";
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <script src="js/bats.js"></script>
+  <script src="js/bats.js"></script>
+  <script src="js/bats.js"></script>
+
+</body>
 </html>
