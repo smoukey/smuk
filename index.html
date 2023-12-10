@@ -12,43 +12,41 @@
     body {
       margin: 0;
       overflow: hidden;
-    }
-
-    #hero {
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-    }
-
-    .hero-content {
-      text-align: center;
-      color: white;
-      z-index: 1;
+      background: #000;
     }
 
     #bgVideo {
       width: 100%;
       height: 100vh;
       object-fit: cover;
-      z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    #hero-content {
+      text-align: center;
+      color: white;
+      z-index: 1;
+    }
+
+    #hero {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div id="cover" class="overlay fullscreen">
-    <label onclick="playVideo();">
-      <b class="rainbow">Click me</b>
-    </label>
-  </div>
-
-  <video id="bgVideo" autoplay loop class="fullscreen-background" style="display: none;">
+  <video id="bgVideo" autoplay loop class="fullscreen-background">
     <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <div id="hero" class="hero">
-    <div class="hero-content">
+  <div id="hero">
+    <div id="hero-content">
       <img src="assets/banner.png" alt="pfp" draggable="false" id="banner" />
       <a href="https://discord.com/users/691517398523576331/" draggable="false">
         <i class="fa-brands fa-discord social-item fa-2xl" style="color:#5077c4;"></i>
@@ -74,20 +72,12 @@
   </div>
 
   <script>
-    function playVideo() {
-      // Hide the cover
-      document.getElementById("cover").style.display = "none";
+    var video = document.getElementById("bgVideo");
+    var hero = document.getElementById("hero");
 
-      // Play the video
-      var video = document.getElementById("bgVideo");
-      video.style.display = "block";
-      video.play();
-
-      // Show the hero content when the video is loaded
-      video.addEventListener('loadeddata', function() {
-        document.getElementById("hero").style.display = "flex";
-      });
-    }
+    video.addEventListener('loadeddata', function() {
+      hero.style.display = "block";
+    });
   </script>
 
   <script src="script.js"></script>
