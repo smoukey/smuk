@@ -10,17 +10,6 @@
   <title>smuki</title>
 </head>
 <body>
-  <div id="cover" class="overlay fullscreen">
-    <label onclick="playVideo();">
-      <b class="rainbow">Click me</b>
-    </label>
-  </div>
-
-  <video id="bgVideo" autoplay loop class="fullscreen-background" style="display: none;">
-    <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
   <div id='hero' class="hero hidden">
     <div class="hero-content">
       <img src="assets/bhop.gif" alt="pfp" class="" draggable="false" id="banner" />
@@ -43,6 +32,17 @@
       <br>
     </div>
   </div>
+
+  <div id="cover" class="overlay fullscreen">
+    <label onclick="playVideo();">
+      <b class="rainbow">Click me</b>
+    </label>
+  </div>
+
+  <video id="bgVideo" autoplay loop class="fullscreen-background" style="display: none;">
+    <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <script>
     function playVideo() {
