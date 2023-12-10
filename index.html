@@ -11,53 +11,47 @@
   <title>smuki</title>
   <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/05c2770731.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #hero {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 1;
+      display: none;
+    }
+    #bgVideo {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
-  <img class="cover-behind-elements no-visual-search" src="https://i.imgur.com/Qz7vLdq.jpeg">
-  <div id="cover" class="overlay fullscreen">
-    <label id="clickMeButton">
-      <b class="rainbow">Click me</b>
-    </label>
-  </div>
-  <video autoplay loop id="bgVideo" class="fullscreen-background" style="display: none;">
+  <video id="bgVideo" autoplay loop class="fullscreen-background">
     <source src="https://cdn.discordapp.com/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628&" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="hero overlay">
-    <p>Loading</p>
+
+  <div id="hero">
+    <img src="assets/smuki.gif" alt="pfp" draggable="false" id="banner" />
+    <a href="https://discord.com/users/691517398523576331/" draggable="false">
+      <i class="fa-brands fa-discord social-item fa-2xl" style="color:#5077c4;"></i>
+    </a>
+    <!-- Your other content goes here -->
   </div>
-  <div id="hero" class="hero hidden">
-    <div id="hero-content" class="hero-content" style="display: none;">
-      <img src="assets/bhop.gif" alt="pfp" class="" draggable="false" id="banner" />
-      <h1 href="https://discord.com/users/691517398523576331/" class="title"></h1>
-      <div class="badge">
-        <img src="assets/XO.gif" style="width: 40px; height: 40px;" alt="$">
-        <span class="badge-tooltiptext">XO</span>
-      </div>
-      <br>
-      <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="no-visual-search" draggable="false" id="" />
-      <h1 class="titl"></h1>
-      <div id="socials">
-        <a href="https://discord.com/users/691517398523576331/" draggable="false">
-          <i class="fa-brands fa-discord social-item fa-2xl" style="color:#5077c4;" id="tele"></i>
-        </a>
-        <a href="https://t.me/smuki1/" draggable="false">
-          <i class="fa-brands fa-telegram social-item fa-2xl" style="color:#5077c4;" id="tele"></i>
-        </a>
-      </div>
-      <br>
-    </div>
-  </div>
-  <script src="script.js"></script>
-  <script src="js/bats.js"></script>
-  <script src="js/bats.js"></script>
-  <script src="js/bats.js"></script>
+
   <script>
     setTimeout(function() {
-      const overlay = document.querySelector('.overlay');
-      overlay.style.display = 'none';
       const hero = document.getElementById('hero');
-      hero.classList.remove('hidden');
+      hero.style.display = 'block';
     }, 750);
 
     document.addEventListener('contextmenu', event => event.preventDefault());
@@ -78,32 +72,12 @@
     document.onselectstart = function() {
       return false;
     }
-
     document.getElementById("banner").onclick = function() {
       window.location.href = "https://discord.com/users/691517398523576331";
     }
-    document.getElementById("discord").onclick = function() {
-      window.location.href = "https://discord.com/users/691517398523576331";
-    }
-    document.getElementById("tele").onclick = function() {
-      window.location.href = "https://t.me/smuki1";
-    }
-
-    function handleClickMe() {
-      const overlay = document.getElementById("cover");
-      overlay.style.display = "none";
-
-      const video = document.getElementById("bgVideo");
-      video.style.display = "block";
-      video.play();
-
-      video.addEventListener('loadeddata', function() {
-        const heroContent = document.getElementById("hero-content");
-        heroContent.style.display = "block";
-      });
-    }
-
-    document.getElementById("clickMeButton").addEventListener("click", handleClickMe);
   </script>
+
+  <script src="script.js"></script>
+  <script src="js/bats.js"></script>
 </body>
 </html>
