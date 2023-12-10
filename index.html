@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="icon" href="assets/premium.gif">
-    <title>Your Title Here</title>
+    <title> </title>
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/snowstorm.js"></script>
+
+    <meta content="bhop" property="og:title"/>
+    <meta content="Xo" property="og:description" />
+    <meta content="https://vawnair.github.io/bio/assets/member.png" property="og:image" />
+    <meta content="#000000" data-react-helmet="true" name="theme-color" />
+    <meta name="description" content="XO">
 </head>
 <body>
-    <div id="cover" class="overlay fullscreen">
-        <label onclick="showHero(); ap(); vp();">
-            <b class="rainbow">Click me</b>
-        </label>
-    </div>
-
-    <video id="bgVideo" autoplay loop class="fullscreen-background">
-        <source src="https://media.discordapp.net/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4?ex=65883498&is=6575bf98&hm=21ab7f389991af890d3a7afebe7417e3f197a2e266d2f826d9a44bdb411df628" type="video/mp4">
+    <video class="cover-behind-elements fullscreen" id="video" autoplay loop>
+        <source src="https://media.discordapp.net/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
+    
     <div id='hero' class="hero hidden">
         <div class="hero-content">
-            <img src="assets/banner.jpg" alt="pfp" class="" draggable="false" id="banner" />
+            <img src="assets/bhop.gif" alt="pfp" class="" draggable="false" id="banner" />
             <h1 href="https://discord.com/users/691517398523576331" class="title"></h1>
             <div class="badge">
                 <img src="assets/XO.gif" style="width: 40px; height: 40px;" alt="$">
                 <span class="badge-tooltiptext">XO</span>
             </div>
             <br>
-            <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="no-visual-search" draggable="false" id="cat?" />
+            <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="" draggable="false" id="cat?" />
             <h1 class="titl"></h1>
             <div id>
                 <img src="assets/discord.png" style="max-width: 71px;" alt="pfp" classdraggable="false" id="discord"/>
@@ -40,30 +43,36 @@
         </div>
     </div>
 
+    <div id="cover" class="overlay fullscreen">
+        <label onclick="showHero();ap();vp()">
+            <b class="rainbow">click</b>
+        </label>
+    </div>  
+
     <audio id="audio" src="#" loop></audio>
 
     <script src="script.js"></script>
     <script src="js/bats.js"></script>
     <script src="js/bats.js"></script>
     <script src="js/bats.js"></script>
-
     <script>
+
         if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
             alert("click");
         }
 
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.onkeydown = function(e) {
-            if (event.keyCode == 123) {
+            if(event.keyCode == 123) {
                 return false;
             }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
                 return false;
             }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
                 return false;
             }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
                 return false;
             }
         }
@@ -71,15 +80,17 @@
         document.onselectstart = function () { return false; }
 
         function showHero() {
+            // remove the div
             document.getElementById("cover").style.display = "none";
             document.getElementById("cover").classList.add("fadeout");
+            // show the hero
             document.getElementById("hero").style.display = "block";
         }
 
         document.getElementById("banner").onclick = function () {
             window.location.href = "https://discord.com/users/691517398523576331";
         }
-
+        
         document.getElementById("discord").onclick = function () {
             window.location.href = "https://discord.com/users/691517398523576331";
         }
