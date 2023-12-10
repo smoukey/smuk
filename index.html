@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="icon" href="assets/vbuck.png">
-    <title>Your Title Here</title>
+    <title>$</title>
     <style>
         body {
             overflow: hidden; /* Prevent scrolling before clicking */
@@ -16,24 +16,37 @@
     </style>
 </head>
 <body>
-    <video class="cover-behind-elements fullscreen" id="video" loop>
+    <video class="cover-behind-elements fullscreen" id="video" loop onclick="playVideo(); showHero();">
         <source src="https://media.discordapp.net/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     
     <div id='hero' class="hero hidden">
-        <!-- Your existing hero content here -->
+        <div class="hero-content">
+            <h1 href="https://discord.com/users/691517398523576331" class="title"></h1>
+            <br>
+            <img src="https://lanyard-profile-readme.vercel.app/api/691517398523576331?theme=dark&bg=a&showDisplayName=true&animated=true&hideDiscrim=true&idleMessage=Not%20doing%20anything." alt="pfp" class="" draggable="false" id="cat?" />
+            <h1 class="titl"></h1>
+            <div id>
+                <img src="assets/discord.png" style="max-width: 55px;" alt="pfp" classdraggable="false" id="discord"/>
+                <img src="assets/tele.png" style="max-width: 55px;" alt="pfp" classdraggable="false" id="tele"/>
+                <img src="assets/roblox.png" style="max-width: 55px;" alt="pfp" classdraggable="false" id="roblox"/>
+            </div>
+            <br>
+        </div>
     </div>
 
     <div id="cover" class="overlay fullscreen">
-        <label onclick="playVideo(); showHero();">
-            <b class="rainbow">click</b>
-        </label>
+        <!-- Removed the label and click function here -->
+        <b class="rainbow" onclick="playVideo(); showHero();">click</b>
     </div>  
 
     <audio id="audio" src="#" loop></audio>
     <script>
-        // Your existing JavaScript code here
+        function playVideo() {
+            var video = document.getElementById("video");
+            video.play();
+        }
 
         function showHero() {
             // remove the div
@@ -42,6 +55,8 @@
             // show the hero
             document.getElementById("hero").style.display = "block";
             
+            // Allow scrolling after clicking
+            document.body.style.overflow = "auto";
         }
     </script>
 </body>
