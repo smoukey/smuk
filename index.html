@@ -18,7 +18,7 @@
     <meta name="description" content="smuki">
 </head>
 <body>
-    <video class="cover-behind-elements fullscreen" id="video" autoplay loop>
+    <video class="cover-behind-elements fullscreen" id="video" loop>
         <source src="https://media.discordapp.net/attachments/1122468415999848468/1183402642140045432/COLDBOY.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -38,7 +38,7 @@
     </div>
 
     <div id="cover" class="overlay fullscreen">
-        <label onclick="showHero();ap();vp()">
+        <label onclick="playVideo(); showHero();">
             <b class="rainbow">click</b>
         </label>
     </div>  
@@ -67,6 +67,11 @@
         }
 
         document.onselectstart = function () { return false; }
+
+        function playVideo() {
+            var video = document.getElementById("video");
+            video.play();
+        }
 
         function showHero() {
             // remove the div
