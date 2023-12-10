@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="assets/premium.gif">
   <title>smuki</title>
-  <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/05c2770731.js" crossorigin="anonymous"></script>
   <style>
     body {
       margin: 0;
@@ -32,6 +30,25 @@
       object-fit: cover;
       z-index: -1;
     }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+    .rainbow {
+      color: #fff;
+      background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+      -webkit-background-clip: text;
+      background-clip: text;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -40,7 +57,7 @@
     Your browser does not support the video tag.
   </video>
 
-  <div id="hero">
+  <div id="hero" class="overlay">
     <img src="assets/smuki.gif" alt="pfp" draggable="false" id="banner" />
     <a href="https://discord.com/users/691517398523576331/" draggable="false">
       <i class="fa-brands fa-discord social-item fa-2xl" style="color:#5077c4;"></i>
@@ -51,7 +68,7 @@
   <script>
     setTimeout(function() {
       const hero = document.getElementById('hero');
-      hero.style.display = 'block';
+      hero.style.display = 'flex';
     }, 750);
 
     document.addEventListener('contextmenu', event => event.preventDefault());
