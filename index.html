@@ -57,6 +57,16 @@
     <script src="js/bats.js"></script>
     <script src="js/bats.js"></script>
     <script>
+            document.onselectstart = function () { return false; }
+
+            function showHero() {
+                // remove the div
+                document.getElementById("cover").style.display = "none";
+                document.getElementById("cover").classList.add("fadeout");
+                // show the hero
+                document.getElementById("hero").style.display = "block";
+            }
+      
       setTimeout(function() {
         const overlay = document.querySelector('.overlay');
         overlay.style.display = 'none';
