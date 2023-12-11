@@ -83,7 +83,11 @@
         function playVideo() {
             var video = document.getElementById("video");
             video.play();
-        }
+            video.controls = false; // Disable controls after playing
+            video.addEventListener('ended', function () {
+            video.controls = true; // Enable controls when the video ends
+        });
+    }
 
     document.getElementById("discord").onclick = function () {
         window.open("https://discord.com/users/691517398523576331", "_blank");
